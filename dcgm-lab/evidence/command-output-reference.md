@@ -8,7 +8,7 @@ Observed: 1 active Tesla T4.
 ## F. Health
 
 ### Commands
-```bash
+```
 dcgmi health -s a
 dcgmi health -c
 ```
