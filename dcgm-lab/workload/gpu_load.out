@@ -1,0 +1,101 @@
+python3 gpu_load.py
+GPU: Tesla T4
+VRAM: 14.6 GiB
+Matrix size: 8192 x 8192
+Allocated tensor memory: approximately 2048 MiB, plus matrices
+Running for 120 seconds. Press Ctrl+C to stop.
+Elapsed=1.7s | Iterations=5 | PyTorch GPU memory=2.76 GiB
+Elapsed=3.4s | Iterations=10 | PyTorch GPU memory=2.76 GiB
+Elapsed=5.2s | Iterations=15 | PyTorch GPU memory=2.76 GiB
+Elapsed=6.9s | Iterations=20 | PyTorch GPU memory=2.76 GiB
+Elapsed=8.6s | Iterations=25 | PyTorch GPU memory=2.76 GiB
+Elapsed=10.3s | Iterations=30 | PyTorch GPU memory=2.76 GiB
+Elapsed=12.0s | Iterations=35 | PyTorch GPU memory=2.76 GiB
+Elapsed=13.8s | Iterations=40 | PyTorch GPU memory=2.76 GiB
+Elapsed=15.6s | Iterations=45 | PyTorch GPU memory=2.76 GiB
+Elapsed=17.3s | Iterations=50 | PyTorch GPU memory=2.76 GiB
+Elapsed=19.1s | Iterations=55 | PyTorch GPU memory=2.76 GiB
+Elapsed=20.9s | Iterations=60 | PyTorch GPU memory=2.76 GiB
+Elapsed=22.7s | Iterations=65 | PyTorch GPU memory=2.76 GiB
+Elapsed=24.5s | Iterations=70 | PyTorch GPU memory=2.76 GiB
+Elapsed=26.3s | Iterations=75 | PyTorch GPU memory=2.76 GiB
+Elapsed=28.2s | Iterations=80 | PyTorch GPU memory=2.76 GiB
+Elapsed=30.0s | Iterations=85 | PyTorch GPU memory=2.76 GiB
+Elapsed=31.8s | Iterations=90 | PyTorch GPU memory=2.76 GiB
+Elapsed=33.6s | Iterations=95 | PyTorch GPU memory=2.76 GiB
+Elapsed=35.4s | Iterations=100 | PyTorch GPU memory=2.76 GiB
+Elapsed=37.2s | Iterations=105 | PyTorch GPU memory=2.76 GiB
+Elapsed=39.0s | Iterations=110 | PyTorch GPU memory=2.76 GiB
+Elapsed=40.9s | Iterations=115 | PyTorch GPU memory=2.76 GiB
+Elapsed=42.7s | Iterations=120 | PyTorch GPU memory=2.76 GiB
+Elapsed=44.5s | Iterations=125 | PyTorch GPU memory=2.76 GiB
+Elapsed=46.3s | Iterations=130 | PyTorch GPU memory=2.76 GiB
+Elapsed=48.2s | Iterations=135 | PyTorch GPU memory=2.76 GiB
+Elapsed=50.1s | Iterations=140 | PyTorch GPU memory=2.76 GiB
+Elapsed=52.0s | Iterations=145 | PyTorch GPU memory=2.76 GiB
+Elapsed=53.9s | Iterations=150 | PyTorch GPU memory=2.76 GiB
+Elapsed=55.8s | Iterations=155 | PyTorch GPU memory=2.76 GiB
+Elapsed=57.7s | Iterations=160 | PyTorch GPU memory=2.76 GiB
+Elapsed=59.6s | Iterations=165 | PyTorch GPU memory=2.76 GiB
+Elapsed=61.5s | Iterations=170 | PyTorch GPU memory=2.76 GiB
+Elapsed=63.4s | Iterations=175 | PyTorch GPU memory=2.76 GiB
+Elapsed=65.3s | Iterations=180 | PyTorch GPU memory=2.76 GiB
+Elapsed=67.2s | Iterations=185 | PyTorch GPU memory=2.76 GiB
+Elapsed=69.1s | Iterations=190 | PyTorch GPU memory=2.76 GiB
+Elapsed=71.0s | Iterations=195 | PyTorch GPU memory=2.76 GiB
+Elapsed=73.0s | Iterations=200 | PyTorch GPU memory=2.76 GiB
+Elapsed=74.8s | Iterations=205 | PyTorch GPU memory=2.76 GiB
+Elapsed=76.7s | Iterations=210 | PyTorch GPU memory=2.76 GiB
+Elapsed=78.6s | Iterations=215 | PyTorch GPU memory=2.76 GiB
+Elapsed=80.4s | Iterations=220 | PyTorch GPU memory=2.76 GiB
+Elapsed=82.3s | Iterations=225 | PyTorch GPU memory=2.76 GiB
+Elapsed=84.2s | Iterations=230 | PyTorch GPU memory=2.76 GiB
+Elapsed=86.1s | Iterations=235 | PyTorch GPU memory=2.76 GiB
+Elapsed=88.1s | Iterations=240 | PyTorch GPU memory=2.76 GiB
+Elapsed=89.9s | Iterations=245 | PyTorch GPU memory=2.76 GiB
+Elapsed=91.8s | Iterations=250 | PyTorch GPU memory=2.76 GiB
+Elapsed=93.8s | Iterations=255 | PyTorch GPU memory=2.76 GiB
+Elapsed=95.7s | Iterations=260 | PyTorch GPU memory=2.76 GiB
+Elapsed=97.7s | Iterations=265 | PyTorch GPU memory=2.76 GiB
+Elapsed=99.6s | Iterations=270 | PyTorch GPU memory=2.76 GiB
+Elapsed=101.5s | Iterations=275 | PyTorch GPU memory=2.76 GiB
+Elapsed=103.5s | Iterations=280 | PyTorch GPU memory=2.76 GiB
+Elapsed=105.3s | Iterations=285 | PyTorch GPU memory=2.76 GiB
+Elapsed=107.2s | Iterations=290 | PyTorch GPU memory=2.76 GiB
+Elapsed=109.2s | Iterations=295 | PyTorch GPU memory=2.76 GiB
+Elapsed=111.1s | Iterations=300 | PyTorch GPU memory=2.76 GiB
+Elapsed=113.0s | Iterations=305 | PyTorch GPU memory=2.76 GiB
+Elapsed=115.0s | Iterations=310 | PyTorch GPU memory=2.76 GiB
+Elapsed=116.9s | Iterations=315 | PyTorch GPU memory=2.76 GiB
+Elapsed=119.0s | Iterations=320 | PyTorch GPU memory=2.76 GiB
+Elapsed=121.0s | Iterations=325 | PyTorch GPU memory=2.76 GiB
+Finished. Total iterations: 325
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   2824 MiB |   2824 MiB |   2824 MiB |      0 B   |
+|---------------------------------------------------------------------------|
+| Active memory         |   2824 MiB |   2824 MiB |   2824 MiB |      0 B   |
+|---------------------------------------------------------------------------|
+| Requested memory      |   2824 MiB |   2824 MiB |   2824 MiB |      0 B   |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   2836 MiB |   2836 MiB |   2836 MiB |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory |  12160 KiB |  12160 KiB |  12160 KiB |      0 B   |
+|---------------------------------------------------------------------------|
+| Allocations           |      36    |      36    |      36    |       0    |
+|---------------------------------------------------------------------------|
+| Active allocs         |      36    |      36    |      36    |       0    |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |      36    |      36    |      36    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |       1    |       1    |       1    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
