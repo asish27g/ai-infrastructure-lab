@@ -1,107 +1,175 @@
-# DCGM Lab —
+# DCGM Lab — Command Reference and Observations
+
+## E. GPU Discovery
+
+### Command
+
+```bash
 dcgmi discovery --list
 ```
-Purpose: Show GPUs and supported hardware discovered by DCGM.
 
-Observed: 1 active Tesla T4.
+**Purpose:** Show GPUs and supported hardware discovered by DCGM.
+
+**Observed:** One active NVIDIA Tesla T4 GPU.
 
 ## F. Health
 
 ### Commands
-```
+
+```bash
 dcgmi health -s a
 dcgmi health -c
 ```
-Purpose: Enable health-watch groups and check current health.
 
-Observed: Health monitor configured; overall health Healthy.
+**Purpose:** Enable health-watch groups and check current GPU health.
 
-## G. Process watches
+**Observed:** Health monitoring configured successfully; overall health reported as `Healthy`.
+
+## G. Process Watches
 
 ### Command
+
 ```bash
 dcgmi stats -e
 ```
-Purpose: Enable DCGM process watches.
 
-Observed: Successfully started process watches.
+**Purpose:** Enable DCGM process statistics watches.
 
-## H. Persistence mode
+**Observed:** Process watches started successfully.
 
-### Incorrect command
+## H. Persistence Mode
+
+### Incorrect Command
+
 ```bash
 nvidia-smi -o 0 -pm 1
 ```
-Result: Failed due to an invalid option for this operation.
 
-### Correct command
+**Result:** Failed because the command used an invalid option for this operation.
+
+### Correct Command
+
 ```bash
 nvidia-smi -i 0 -pm 1
 ```
-Purpose: Enable persistence mode on GPU 0.
 
-Observed: Legacy persistence mode enabled.
+**Purpose:** Enable persistence mode on GPU 0.
+
+**Observed:** Legacy persistence mode enabled successfully.
 
 ## I. Diagnostics
 
 ### Command
+
 ```bash
 dcgmi diag -r 1
 ```
-Purpose: Run a Level 1 diagnostic.
 
-Observed first run: Failed because persistence mode was disabled.
+**Purpose:** Run a Level 1 DCGM diagnostic.
 
-Observed after enabling persistence mode:
+**Observed — First Run:** Failed because persistence mode was disabled.
+
+**Observed — After Enabling Persistence Mode:**
+
 ```text
 software Pass
 GPU0: Pass
 ```
 
-## J. Live DCGM monitoring
+## J. Live DCGM Monitoring
 
 ### Command
+
 ```bash
 dcgmi dmon -e 100,150,155,203,204
 ```
-Purpose: Observe selected DCGM telemetry fields.
 
-Observed while idle:
-- SM clock around 300 MHz.
-- Temperature around 37 C.
-- Power around 13.6–
+**Purpose:** Observe selected DCGM telemetry fields.
+
+**Observed While Idle:**
+
+- SM clock: approximately 300 MHz.
+- Temperature: approximately 37 °C.
+- Power consumption: approximately 13.6–13.8 W.
+- GPU utilization: 0%.
+- Memory utilization: 0%.
+
+These values are historical observations from the idle monitoring session.
+
+## K. NVIDIA-SMI Monitoring
+
 ### Command
+
 ```bash
 nvidia-smi dmon -s pucm -d 1
 ```
-Purpose: Display NVIDIA GPU utilization, power, clock, and memory
-telemetry at one-second intervals. Exact output from an active
-workload comparison was not captured in the historical evidence.
 
-## L. GPU workload
+**Purpose:** Display NVIDIA GPU power, utilization, clock, and memory telemetry at one-second intervals.
 
-Observed workload configuration:
-- PyTorch matrix multiplication.
-- Matrix dimensions 8192 x 8192.
-- Approximately 2.76 GiB PyTorch GPU memory.
-- 200 iterations in approximately 73 seconds.
-- No OOM observed.
-- Manually stopped using Ctrl+C.
+**Observation:** A complete, simultaneous comparison between DCGM and NVIDIA-SMI during an active workload was not captured in the historical evidence.
 
-## M. Useful checks for future sessions
+## L. GPU Workload
+
+**Workload:** PyTorch matrix multiplication.
+
+**Observed Configuration and Results:**
+
+- Matrix dimensions: 8192 × 8192.
+- PyTorch GPU memory allocation: approximately 2.76 GiB.
+- Completed iterations: 200.
+- Elapsed time: approximately 73 seconds.
+- Out-of-memory (OOM) error: None observed.
+- Execution: Manually stopped with `Ctrl+C` before the configured 120-second duration.
+
+These results describe the recorded workload run, not a standardized performance benchmark.
+
+## M. Useful Commands for Future Sessions
+
+### GPU and Driver Information
 
 ```bash
 nvidia-smi
-nvidia-smi --query-gpu=index,name,driver_version,memory.total,persistence_mode --format=csv
-dcgmi --version
+
+nvidia-smi --query-gpu=index,name,driver_version,memory.total,persistence_mode \
+  --format=csv
+```
+
+### DCGM Version and Discovery
+
+```bash
+dcgmi version
 dcgmi discovery --list
+```
+
+### Health and Process Monitoring
+
+```bash
 dcgmi health -s a
 dcgmi health -c
 dcgmi stats -e
+```
+
+### Diagnostics
+
+```bash
 dcgmi diag -r 1
+```
+
+### DCGM Telemetry
+
+```bash
 dcgmi dmon -e 100,150,155,203,204
+```
+
+### NVIDIA-SMI Telemetry
+
+```bash
 nvidia-smi dmon -s pucm -d 1
 ```
 
-Note: The historical observations above are not a substitute for
-capturing fresh output from a live GPU environment.
+## Notes and Limitations
+
+- Historical observations document results from a previous experiment; they do not guarantee current system behavior.
+- Capture fresh command output when repeating an experiment.
+- To validate GPU behavior under load, run telemetry monitoring concurrently with the workload and retain both outputs.
+- Compare DCGM and NVIDIA-SMI results only when the measurements correspond to comparable time periods and supported metrics.
